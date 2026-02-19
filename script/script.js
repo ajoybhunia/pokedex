@@ -6,7 +6,7 @@ const addCardsToTemplate = (cards, types) => `
 
 <head>
   <title>Pokedex</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
