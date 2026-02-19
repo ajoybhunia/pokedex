@@ -98,7 +98,7 @@ const generateSidebarContent = (types, fileName, type) => {
     const tagId = t.toLowerCase() === type.toLowerCase() ? t.toLowerCase() : "";
 
     return `
-    <a href="/${fileName[i]}.html" class="category" id="${tagId}">${
+    <a href="${fileName[i]}.html" class="category" id="${tagId}">${
       toCapitalize(t)
     }</a>
     `;
