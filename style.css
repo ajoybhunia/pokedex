@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --all: dimgray;
+  --water: dodgerblue;
+  --ice: darkcyan;
+  --grass: mediumseagreen;
+  --poison: mediumpurple;
+  --fire: goldenrod;
+  --flying: steelblue;
+  --bug: brown;
+  --normal: gray;
+  --ground: peru;
+  --fairy: hotpink;
+  --fighting: crimson;
+  --electric: hsl(51deg 73% 50%);
+  --psychic: orange;
+  --rock: dimgray;
+  --dragon: mediumaquamarine;
+  --ghost: black;
+  --dark: slategray;
+  --steel: steelblue;
+}
+
+body {
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  width: 20%;
+  flex-shrink: 0;
+  background-color: rgb(238, 236, 236);
+}
+
+.category {
+  display: flex;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  color: rgb(65, 64, 64);
+  justify-content: left;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.category:hover {
+  background-color: rgb(215, 211, 211);
+}
+
+.cards {
+  height: 100%;
+  overflow: scroll;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 1em 2em;
+  background-color: whitesmoke;
+}
+
+.card {
+  width: 280px;
+  /* max-height: max-content; */
+  border: 1.5px solid rgba(28, 28, 28, 0.24);
+  /* border: 1px solid rgba(31, 30, 30, 0.24); */
+  border-radius: 0.3em;
+  padding: 0.5em;
+  background-color: rgb(238, 236, 236);
+}
+
+.card:hover {
+  box-shadow: 5px 5px 10px 2px #888;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 1.1;
+  background: linear-gradient(120deg, rgb(150, 175, 150), rgb(173, 140, 173));
+  border-radius: 0.2em 0.2em 0px 0px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+p {
+  font-weight: 400;
+}
+
+.card .description {
+  padding: 1em 0.5em;
+}
+
+.card .description .name-heading {
+  justify-content: space-between;
+  display: flex;
+  padding-bottom: 1em;
+}
+
+.card .description .name-heading .items {
+  display: flex;
+  gap: 0.3em;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.card .description .name-heading .items .type {
+  color: var(--text-color);
+  border-radius: 0.15em;
+  padding: 0em 0.3em;
+  border: 1px solid #bbb;
+}
+
+#all {
+  background-color: var(--all);
+  color: var(--text-color);
+}
+
+.water, #water {
+  background-color: var(--water);
+  color: var(--text-color);
+}
+
+.ice, #ice {
+  background-color: var(--ice);
+  color: var(--text-color);
+}
+
+.grass, #grass {
+  background-color: var(--grass);
+  color: var(--text-color);
+}
+
+.poison, #poison {
+  background-color: var(--poison);
+  color: var(--text-color);
+}
+
+.fire, #fire {
+  background-color: var(--fire);
+  color: var(--text-color);
+}
+
+.flying, #flying {
+  background-color: var(--flying);
+  color: var(--text-color);
+}
+
+.bug, #bug {
+  background-color: var(--bug);
+  color: var(--text-color);
+}
+
+.normal, #normal {
+  background-color: var(--normal);
+  color: var(--text-color);
+}
+
+.ground, #ground {
+  background-color: var(--ground);
+  color: var(--text-color);
+}
+
+.fairy, #fairy {
+  background-color: var(--fairy);
+  color: var(--text-color);
+}
+
+.fighting, #fighting {
+  background-color: var(--fighting);
+  color: var(--text-color);
+}
+
+.electric, #electric {
+  background-color: var(--electric);
+  color: var(--text-color);
+}
+
+.psychic, #psychic {
+  background-color: var(--psychic);
+  color: var(--text-color);
+}
+
+.rock, #rock {
+  background-color: var(--rock);
+  color: var(--text-color);
+}
+
+.dragon, #dragon {
+  background-color: var(--dragon);
+  color: var(--text-color);
+}
+
+.ghost, #ghost {
+  background-color: var(--ghost);
+  color: var(--text-color);
+}
+
+.dark, #dark {
+  background-color: var(--dark);
+  color: var(--text-color);
+}
+
+.steel, #steel {
+  background-color: var(--steel);
+  color: var(--text-color);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td {
+  padding-bottom: 0.3em;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-bottom: 1px dotted #bec0c3;
+}
+
+.col2 {
+  text-align: right;
+  color: #666;
+}
+
+.col1 {
+  text-align: left;
+  color: #555;
+}
+
+tr:last-child td {
+  border: none;
+  padding-bottom: 0em;
+}
