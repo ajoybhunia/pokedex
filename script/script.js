@@ -64,7 +64,7 @@ const generateCard = (details) => {
         <div class="card">
         <div class="image-container">
           <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${details.id}.png"
+            src=${details.imgSrc}
             alt="${details.name}">
         </div>
 

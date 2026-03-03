@@ -22,8 +22,10 @@ const getDetail = async (url) => {
   const filteredStats = getStats(stats);
   filteredStats["weight"] = weight;
   filteredStats["base XP"] = base_experience;
+  const imgSrc =
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
-  return { id, name, types: categories, stats: filteredStats };
+  return { imgSrc, id, name, types: categories, stats: filteredStats };
 };
 
 const getDetails = async (url) => {
