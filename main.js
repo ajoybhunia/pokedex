@@ -96,24 +96,16 @@ const addCard = (pokemon) => {
 
   card.append(imageContainer, description);
 
-  cards.append(card);
+  cards.appendChild(card);
 };
 
-window.onload = () => {
-const pokemon = {
-    "imgSrc": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    "id": 1,
-    "name": "bulbasaur",
-    "types": ["grass", "poison"],
-    "stats": {
-      "hp": 45,
-      "attack": 49,
-      "defense": 49,
-      "speed": 45,
-      "weight": 69,
-      "base XP": 64
-    }
-  };
+window.onload = async() => {
 
-  addCard(pokemon);
+  const pokemons = await fetch('/pokemons.json');
+  const pokemonJson = await pokemons.json()
+
+  pokemonJson.forEach(pokemon => {
+    addCard(pokemon);
+  })
+
 };
