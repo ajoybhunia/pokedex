@@ -1,3 +1,5 @@
+import { toCapitalize, getDistinctTypes } from "./script/utility.js";
+
 const addImageContainer = (src, name) => {
   const imageContainer =  document.createElement('div');
   imageContainer.classList.add("image-container");
@@ -18,7 +20,7 @@ const addHeading = (pokemon) => {
   heading.className = 'items';
 
   const h = document.createElement('h4');
-  h.textContent = pokemon.name;
+  h.textContent = toCapitalize(pokemon.name);
 
   const types = document.createElement('div');
   types.className = 'items';
@@ -58,7 +60,7 @@ const addStat = (stats) => {
     const td2 = document.createElement('td');
     td2.className = 'col2';
 
-    td1.textContent = stat;
+    td1.textContent = toCapitalize(stat);
     td2.textContent = stats[stat];
 
     tr.append(td1, td2);
@@ -99,13 +101,49 @@ const addCard = (pokemon) => {
   cards.appendChild(card);
 };
 
+const addSidebar = (pokemons) => {
+  const sidebar = document.querySelector(".sidebar");
+
+  const types = getDistinctTypes(pokemons);
+  
+  types.forEach(type => {
+    const anchor = document.createElement('a');
+
+    anchor.className = 'category';
+    anchor.setAttribute('id', type);
+    anchor.setAttribute('href', '#');
+    
+    anchor.textContent = type;
+
+    sidebar.appendChild(anchor);
+  })
+}
+
+const filterPokemons = (pokemons) => {
+
+}
+
 window.onload = async() => {
 
-  const pokemons = await fetch('/pokemons.json');
-  const pokemonJson = await pokemons.json()
+  const pokemons = await fetch('/pokemons.json').then(data => data.json());
 
-  pokemonJson.forEach(pokemon => {
+  addSidebar(pokemons);
+
+  pokemons.forEach(pokemon => {
     addCard(pokemon);
   })
-
 };
+
+
+// const createFragment = (tag, attrs, content) => {
+//   const element = document.createElement(tag);
+//   // const typeElements = 
+// }
+
+// window.onload = () => {
+//   const data = [
+//     'div',
+//     []
+//   ]
+//   createFragment()
+// }
