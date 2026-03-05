@@ -1,4 +1,4 @@
-import { getDistinctTypes, toCapitalize } from "./utility.js";
+import { getDistinctTypes, toCapitalize } from "../scripts/utility.js";
 
 const addCardsToTemplate = (cards, types) => `
 <!DOCTYPE html>
