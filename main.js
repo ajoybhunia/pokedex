@@ -14,10 +14,12 @@ window.onload = async () => {
 
   sidebarContainer.addEventListener("click", (e) => {
     e.preventDefault();
-    const selectedType = e.target.dataset.type;
 
-    const filtered = filterPokemon(selectedType, allPokemon);
+    if (e.target.classList.value === "category") {
+      const selectedType = e.target.dataset.type;
+      const filtered = filterPokemon(selectedType, allPokemon);
 
-    renderPage(types, selectedType, filtered, sidebarContainer);
+      renderPage(types, selectedType, filtered, sidebarContainer);
+    }
   });
 };
