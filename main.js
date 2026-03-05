@@ -1,4 +1,4 @@
-import { filter, getDistinctTypes } from "./scripts/utility.js";
+import { filterPokemon, getDistinctTypes } from "./scripts/utility.js";
 import { renderPage } from "./scripts/render.js";
 import { fetchAllPokemon } from "./scripts/fetch.js";
 
@@ -16,7 +16,7 @@ window.onload = async () => {
     e.preventDefault();
     const selectedType = e.target.dataset.type;
 
-    const filtered = filter(selectedType, allPokemon);
+    const filtered = filterPokemon(selectedType, allPokemon);
 
     renderPage(types, selectedType, filtered, sidebarContainer);
   });

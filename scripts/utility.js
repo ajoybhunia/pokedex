@@ -4,15 +4,12 @@ export const toCapitalize = (word) => {
 
 export const getDistinctTypes = (pokemons) => {
   const set = new Set();
-
-  pokemons.forEach((pokemon) => {
-    pokemon.types.forEach((type) => set.add(type));
-  });
+  pokemons.map((pokemon) => pokemon.types.map((type) => set.add(type)));
 
   return [...set];
 };
 
-export const filter = (type, allPokemon) =>
+export const filterPokemon = (type, allPokemon) =>
   type === "all"
     ? allPokemon
     : allPokemon.filter((p) => p.types.includes(type));

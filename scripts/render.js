@@ -6,17 +6,21 @@ const clear = (element) => (element.innerHTML = "");
 const renderCards = (allPokemon, container) => {
   clear(container);
 
-  allPokemon.forEach((pokemon) =>
-    container.append(createFragment(pokemonCardTemplate(pokemon)))
+  const cards = allPokemon.map((pokemon) =>
+    createFragment(pokemonCardTemplate(pokemon))
   );
+
+  container.append(...cards);
 };
 
 const renderSidebar = (types, container, type) => {
   clear(container);
 
-  sidebarTemplate(types, type).forEach((template) =>
-    container.append(createFragment(template))
+  const pokeTypes = sidebarTemplate(types, type).map((template) =>
+    createFragment(template)
   );
+
+  container.append(...pokeTypes);
 };
 
 export const renderPage = (types, type, allPokemon, sidebarContainer) => {
